@@ -5,6 +5,9 @@
 <title>Verificación – Carnet Canino</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Librería html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -77,15 +80,35 @@ body {
   padding: 14px;
   background: #f9fafb;
 }
+
+/* Botón PDF */
+.btn-pdf {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 22px;
+  background: #1565C0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-pdf:hover {
+  background: #0d47a1;
+}
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<!-- BOTÓN -->
+<button class="btn-pdf" onclick="descargarPDF()">📄 Descargar Carnet en PDF</button>
+
+<!-- CONTENIDO A EXPORTAR -->
+<div id="carnet" class="card">
 
   <div class="header">
-    <!-- Puedes cambiar la imagen por un logo -->
     <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Mascota">
     <h2>Mascotify</h2>
     <p>Verificación de Carnet Digital Canino</p>
@@ -103,39 +126,34 @@ body {
     
     <div class="section-title">💉 Historial de Vacunación</div>
 
-    <div class="vaccine">
-      <strong>Rabia</strong><br>
-      Fecha: 20/03/2025
-    </div>
+    <div class="vaccine"><strong>Rabia</strong><br>Fecha: 20/03/2025</div>
+    <div class="vaccine"><strong>Polivalente</strong><br>Fecha: 20/03/2025</div>
+    <div class="vaccine"><strong>Leptospirosis</strong><br>Fecha: 05/04/2025</div>
+    <div class="vaccine"><strong>Bordetella</strong><br>Fecha: 01/07/2025</div>
 
-    <div class="vaccine">
-      <strong>Polivalente</strong><br>
-      Fecha: 20/03/2025
-    </div>
-
-    <div class="vaccine">
-      <strong>Leptospirosis</strong><br>
-      Fecha: 05/04/2025
-    </div>
-
-    <div class="vaccine">
-      <strong>Bordetella</strong><br>
-      Fecha: 01/07/2025
-    </div>
-
- <div class="section-title">🧑‍⚕️ Información Dueño</div>
+    <div class="section-title">🧑‍⚕️ Información Dueño</div>
     <div class="data"><strong>Propietario:</strong> Alex Vásquez Sánchez</div>
-        
+
     <div class="section-title">🧑‍⚕️ Información Profesional</div>
     <div class="data"><strong>Médico Veterinario:</strong> Dra. Lucy Andrea Bayona Melendez</div>
     <div class="data"><strong>CMVP:</strong> 11310</div>
-    
+
   </div>
 
   <div class="footer">
-    Verificación oficial - https://mascotify.pe  E-mail - info@mascotify.pe
+    Verificación oficial - https://mascotify.pe <br>
+    E-mail - info@mascotify.pe
   </div>
 </div>
 
-</body>
-</html>
+<script>
+function descargarPDF() {
+  const elemento = document.getElementById('carnet');
+
+  const opciones = {
+    margin: 0.5,
+    filename: 'Carnet_Canino_LUCAS.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { u
+
