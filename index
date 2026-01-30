@@ -1,0 +1,72 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Verificación – Carnet Canino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+}
+.card {
+  max-width: 420px;
+  background: #ffffff;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.header {
+  background: linear-gradient(90deg, #2E7D32, #1565C0);
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+.status {
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+.content {
+  padding: 16px;
+}
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  padding: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="header">
+    <h2>Veterinaria Privada</h2>
+    <p>Verificación de Carnet Digital</p>
+  </div>
+
+  <div class="status">
+    ✅ CARNET VÁLIDO
+  </div>
+
+  <div class="content">
+    <p><strong>🐶 Nombre del can:</strong> MAX</p>
+    <p><strong>💉 Última vacuna:</strong> Rabia</p>
+    <p><strong>📅 Fecha:</strong> 12/03/2025</p>
+    <p><strong>🩺 Médico Veterinario:</strong> Dr. Roberto Pérez</p>
+    <p><strong>CMVP:</strong> 12345</p>
+  </div>
+
+  <div class="footer">
+    Documento sanitario informativo – Perú
+  </div>
+</div>
+
+</body>
+</html>
