@@ -1,178 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Verificación – Certificado Médico Veterinario</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Verificación – Certificado Médico Veterinario</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- html2pdf -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<!-- html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(180deg, #f0f7f4, #e3f2fd);
-      margin: 0;
-      padding: 0;
-    }
+<style>
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(180deg, #f0f7f4, #e3f2fd);
+  margin: 0;
+  padding: 0;
+}
 
-    .card {
-      max-width: 440px;
-      background: #ffffff;
-      margin: 30px auto;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      overflow: hidden;
-    }
+.card {
+  max-width: 420px;
+  background: #ffffff;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
 
-    .header {
-      background: linear-gradient(90deg, #2E7D32, #1565C0);
-      color: white;
-      padding: 22px;
-      text-align: center;
-    }
+.header {
+  background: linear-gradient(90deg, #2E7D32, #1565C0);
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
 
-    .header img {
-      width: 72px;
-      margin-bottom: 10px;
-    }
+.header h2 {
+  margin: 0;
+}
 
-    .header h1 {
-      font-size: 18px;
-      margin: 0;
-    }
+.status {
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+}
 
-    .status {
-      background: #E8F5E9;
-      color: #2E7D32;
-      padding: 14px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 15px;
-    }
+.content {
+  padding: 18px;
+}
 
-    .content {
-      padding: 20px;
-    }
+.section-title {
+  font-size: 14px;
+  color: #1565C0;
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
 
-    .field {
-      margin-bottom: 14px;
-    }
+.data {
+  font-size: 14px;
+  margin: 6px 0;
+  text-align: justify;
+}
 
-    .label {
-      font-size: 12px;
-      color: #607D8B;
-      margin-bottom: 3px;
-    }
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  padding: 14px;
+  background: #f9fafb;
+}
 
-    .value {
-      font-size: 15px;
-      color: #263238;
-      font-weight: 600;
-    }
+.btn-pdf {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 22px;
+  background: #1565C0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
-    .divider {
-      height: 1px;
-      background: #E0E0E0;
-      margin: 16px 0;
-    }
-
-    .footer {
-      padding: 16px;
-      text-align: center;
-      background: #FAFAFA;
-    }
-
-    .footer button {
-      background: linear-gradient(90deg, #2E7D32, #1565C0);
-      color: white;
-      border: none;
-      border-radius: 24px;
-      padding: 10px 22px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .footer button:hover {
-      opacity: 0.9;
-    }
-
-    .note {
-      font-size: 11px;
-      color: #757575;
-      margin-top: 10px;
-    }
-  </style>
+.btn-pdf:hover {
+  background: #0d47a1;
+}
+</style>
 </head>
+
 <body>
 
-<div class="card" id="certificado">
+<!-- BOTÓN PDF -->
+<button class="btn-pdf" onclick="descargarCertificadoMedico()">
+  📄 Descargar Certificado Médico
+</button>
+
+<!-- CONTENIDO A EXPORTAR -->
+<div id="certificado-medico" class="card">
+
   <div class="header">
-    <!-- Logo opcional -->
-    <!-- <img src="logo.png" alt="Logo"> -->
-    <h1>Certificado Médico Veterinario</h1>
+    <h2>Certificado Médico Veterinario</h2>
+    <p>Documento Oficial de Evaluación Clínica</p>
   </div>
 
   <div class="status">
-    ✔ Certificado Válido y Verificado
+    ✅ CERTIFICADO VÁLIDO
   </div>
 
   <div class="content">
-    <div class="field">
-      <div class="label">Nombre del Profesional</div>
-      <div class="value">Dr. Juan Pérez Rodríguez</div>
+
+    <div class="section-title">🐶 Datos del Paciente</div>
+    <div class="data"><strong>Nombre:</strong> LUCAS</div>
+    <div class="data"><strong>Especie:</strong> Canino</div>
+    <div class="data"><strong>Edad:</strong> 5 Años</div>
+
+    <div class="section-title">🩺 Evaluación Clínica</div>
+    <div class="data">
+      La suscrita Médico Veterinario certifica que el canino identificado como
+      <strong>LUCAS</strong>, de especie <strong>Canino</strong>, fue evaluado clínicamente,
+      encontrándose en <strong>buen estado general de salud</strong>.
+      <br><br>
+      Durante la revisión médica no se evidenciaron signos clínicos de enfermedad,
+      alteraciones fisiológicas ni afecciones infectocontagiosas al momento de la evaluación.
+      <br><br>
+      Asimismo, se verifica que el paciente cuenta con su
+      <strong>esquema de vacunación vigente</strong>, por lo cual se considera
+      <strong>APTO</strong> desde el punto de vista médico veterinario.
     </div>
 
-    <div class="field">
-      <div class="label">Colegiatura</div>
-      <div class="value">CMPV N° 12345</div>
-    </div>
+    <div class="section-title">🧑‍⚕️ Profesional Responsable</div>
+    <div class="data"><strong>Médico Veterinario:</strong> Dra. Lucy Andrea Bayona Melendez</div>
+    <div class="data"><strong>CMVP:</strong> 11310</div>
 
-    <div class="divider"></div>
+    <div class="section-title">🧑‍🦱 Propietario</div>
+    <div class="data"><strong>Nombre:</strong> Alex Vásquez Sánchez</div>
 
-    <div class="field">
-      <div class="label">Nombre del Animal</div>
-      <div class="value">Max</div>
-    </div>
+    <div class="section-title">📅 Emisión</div>
+    <div class="data"><strong>Fecha:</strong> 26/01/2026</div>
+    <div class="data"><strong>Código de Verificación:</strong> CMV-LUCAS-2026</div>
 
-    <div class="field">
-      <div class="label">Especie</div>
-      <div class="value">Canino</div>
-    </div>
-
-    <div class="field">
-      <div class="label">Fecha de Emisión</div>
-      <div class="value">15/01/2026</div>
-    </div>
-
-    <div class="field">
-      <div class="label">Código de Verificación</div>
-      <div class="value">CMV-8F3A9C21</div>
-    </div>
   </div>
 
   <div class="footer">
-    <button onclick="descargarPDF()">Descargar PDF</button>
-    <div class="note">
-      Este documento fue verificado digitalmente.
-    </div>
+    Documento emitido por Mascotify<br>
+    https://mascotify.pe | info@mascotify.pe
   </div>
 </div>
 
 <script>
-  function descargarPDF() {
-    const elemento = document.getElementById("certificado");
+function descargarCertificadoMedico() {
+  const elemento = document.getElementById('certificado-medico');
 
-    const opciones = {
-      margin: 0.5,
-      filename: 'certificado_veterinario.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
+  const opciones = {
+    margin: 0.5,
+    filename: 'Certificado_Medico_LUCAS.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
 
-    html2pdf().set(opciones).from(elemento).save();
-  }
+  html2pdf()
+    .set(opciones)
+    .from(elemento)
+    .save()
+    .catch(err => console.error('Error al generar PDF:', err));
+}
 </script>
 
 </body>
