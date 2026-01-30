@@ -4,40 +4,78 @@
 <meta charset="UTF-8">
 <title>Verificación – Carnet Canino</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(180deg, #f0f4f8, #e3edf7);
   margin: 0;
+  padding: 0;
 }
+
 .card {
   max-width: 420px;
   background: #ffffff;
   margin: 30px auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  overflow: hidden;
 }
+
 .header {
   background: linear-gradient(90deg, #2E7D32, #1565C0);
   color: white;
-  padding: 16px;
+  padding: 20px;
   text-align: center;
 }
+
+.header img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
 .status {
   background: #E8F5E9;
   color: #2E7D32;
   font-weight: bold;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
+  font-size: 16px;
 }
+
 .content {
-  padding: 16px;
+  padding: 18px;
 }
+
+.section-title {
+  font-size: 14px;
+  color: #1565C0;
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.data {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.vaccine {
+  background: #f5f8fc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
 .footer {
   text-align: center;
   font-size: 12px;
   color: #777;
-  padding: 12px;
+  padding: 14px;
+  background: #f9fafb;
 }
 </style>
 </head>
@@ -45,9 +83,12 @@ body {
 <body>
 
 <div class="card">
+
   <div class="header">
+    <!-- Puedes cambiar la imagen por un logo -->
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Mascota">
     <h2>Mascotify</h2>
-    <p>Verificación de Carnet Digital</p>
+    <p>Verificación de Carnet Digital Canino</p>
   </div>
 
   <div class="status">
@@ -55,23 +96,43 @@ body {
   </div>
 
   <div class="content">
-    <p><strong>🐶 Nombre del can:</strong> LUCAS</p>
-     <p><strong>💉 Última vacuna:</strong> Rabia</p>
-    <p><strong>📅 Fecha:</strong> 20/03/2025</p>
-    <p><strong>💉 Última vacuna:</strong> Polivalente</p>
-    <p><strong>📅 Fecha:</strong> 20/03/2025</p>
-    <p><strong>💉 Última vacuna:</strong> Leptospirosis</p>
-    <p><strong>📅 Fecha:</strong> 05/04/2025</p>
-    <p><strong>💉 Última vacuna:</strong> Bordetella</p>
-    <p><strong>📅 Fecha:</strong> 01/07/2025</p>
-    <p><strong>🩺 Dueño:</strong> Alex Vásquez Sánchez</p>
-    <p><strong>🩺 Médico Veterinario:</strong> Dr. Lucy Andrea Bayona Melendez</p>
-    <p><strong>CMVP:</strong> 11310</p>
+
+    <div class="section-title">🐶 Datos de la Mascota</div>
+    <div class="data"><strong>Nombre:</strong> LUCAS</div>
+
+    <div class="section-title">💉 Historial de Vacunación</div>
+
+    <div class="vaccine">
+      <strong>Rabia</strong><br>
+      Fecha: 20/03/2025
+    </div>
+
+    <div class="vaccine">
+      <strong>Polivalente</strong><br>
+      Fecha: 20/03/2025
+    </div>
+
+    <div class="vaccine">
+      <strong>Leptospirosis</strong><br>
+      Fecha: 05/04/2025
+    </div>
+
+    <div class="vaccine">
+      <strong>Bordetella</strong><br>
+      Fecha: 01/07/2025
+    </div>
+
+    <div class="section-title">🧑‍⚕️ Información Profesional</div>
+    <div class="data"><strong>Propietario:</strong> Alex Vásquez Sánchez</div>
+    <div class="data"><strong>Médico Veterinario:</strong> Dra. Lucy Andrea Bayona Melendez</div>
+    <div class="data"><strong>CMVP:</strong> 11310</div>
+
   </div>
 
   <div class="footer">
-    https://mascotify.pe/
+    Verificación oficial · https://mascotify.pe
   </div>
+
 </div>
 
 </body>
