@@ -103,7 +103,9 @@ body {
 <body>
 
 <!-- BOTÓN -->
-<button class="btn-pdf" onclick="descargarPDF()">📄 Descargar Carnet en PDF</button>
+<button class="btn-pdf" onclick="descargarPDF()">
+  📄 Descargar Carnet en PDF
+</button>
 
 <!-- CONTENIDO A EXPORTAR -->
 <div id="carnet" class="card">
@@ -154,6 +156,24 @@ function descargarPDF() {
     margin: 0.5,
     filename: 'Carnet_Canino_LUCAS.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { u
+    html2canvas: { 
+      scale: 2,
+      useCORS: true
+    },
+    jsPDF: { 
+      unit: 'in', 
+      format: 'letter', 
+      orientation: 'portrait' 
+    }
+  };
 
+  html2pdf()
+    .set(opciones)
+    .from(elemento)
+    .save()
+    .catch(err => console.error('Error al generar PDF:', err));
+}
+</script>
+
+</body>
+</html>
